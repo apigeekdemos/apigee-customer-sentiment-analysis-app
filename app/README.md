@@ -3,6 +3,8 @@ Apigee Sentiment Analysis App
 
 Apigee sentiment Analysis App (ASAP) uses REST APIs built on top of Apigee. The purpose of this app is to show how to leverage a REST API into an App to build the user experience from two different roles: end-user/customer and customer service administrator.
 
+[http://apigee-sales-bootcamp-demo.appspot.com/](http://apigee-sales-bootcamp-demo.appspot.com/)
+
 ![Main page](./images/app-image.png)
 
 ### Getting started
@@ -19,14 +21,21 @@ npm serve
 
 ### How it works
 Describe the app:
-* @TODO REST API
-* @TODO include OpenAPI Spec and endpoints and how they map to the two pages: submit a comment (POST /comments) and retrieve comments (GET /comments).
-* @TODO see [src/app/@core/data/smart-table.service.ts](src/app/@core/data/smart-table.service.ts)
-* @ Review getData method
-* @TODO Review [/src/app/pages/tables/smart-table/smart-table.component.ts](/src/app/pages/tables/smart-table/smart-table.component.ts) check constructor.
-* @TODO Generate dist `$ ng build`
-* @TODO `cp -rf ./dist/** ../ngx-admin-nodejs/public`
-* @TODO Push to gcloud with `gcloud app deploy --quiet` and Node.js server
+* See Sentiment Analysis REST API
+* include OpenAPI Spec and endpoints and how they map to the two pages: submit a comment (POST /comments) and retrieve comments (GET /comments).
+* See [src/app/@core/data/smart-table.service.ts] to overide API_URL(src/app/@core/data/smart-table.service.ts)
+* getData function
+* Review [/src/app/pages/tables/smart-table/smart-table.component.ts](/src/app/pages/tables/smart-table/smart-table.component.ts) check constructor.
+* Generate dist `$ ng build`
+* Copy distributable files to public folder:
+```bash
+$ cp -rf ./dist/** ../ngx-admin-nodejs/public
+```
+* Push to gcloud with:
+```bash
+$ cd cd ../nodejs-server-app
+$ gcloud app deploy --quiet
+```
 
 ### References and Documentation
 
