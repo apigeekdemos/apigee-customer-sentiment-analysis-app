@@ -5,4 +5,21 @@ import { Component } from '@angular/core';
   templateUrl: './e-commerce.component.html',
 })
 export class ECommerceComponent {
+  settings = {
+    columns: {
+      id: {
+        title: 'ID'
+      },
+      name: {
+        title: 'Full Name'
+      },
+      username: {
+        title: 'User Name'
+      },
+      email: {
+        title: 'Email'
+      }
+    }
+  };
+  
 }

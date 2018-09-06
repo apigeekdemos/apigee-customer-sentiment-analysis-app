@@ -57,13 +57,13 @@ export const MENU_ITEMS: NbMenuItem[] = [
   }, 
   */
   {
-    title: 'Forms',
+    title: 'Submit feedback',
     icon: 'nb-compose',
     children: [
-      {
+/*       {
         title: 'Form Inputs',
         link: '/pages/forms/inputs',
-      },
+      }, */
       {
         title: 'Form Layouts',
         link: '/pages/forms/layouts',
@@ -140,7 +140,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
   },
   */
   {
-    title: 'Tables',
+    title: 'View Feedback',
     icon: 'nb-tables',
     children: [
       {

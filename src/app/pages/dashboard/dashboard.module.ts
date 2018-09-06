@@ -46,5 +46,8 @@ import { TrafficChartComponent } from './traffic/traffic-chart.component';
     TrafficComponent,
     TrafficChartComponent,
   ],
+  /* providers: [
+    SmartTableService,
+  ], */
 })
 export class DashboardModule { }

@@ -1,4 +1,4 @@
-<div class="row">
+<!-- <div class="row">
   <div class="col-md-12">
     <nb-card class="inline-form-card">
       <nb-card-header>Inline form</nb-card-header>
@@ -15,11 +15,11 @@
       </nb-card-body>
     </nb-card>
   </div>
-</div>
+</div> -->
 
 <div class="row">
-  <div class="col-md-6">
-    <nb-card>
+  <div class="col-md-8">
+    <!--     <nb-card>
       <nb-card-header>Using the Grid</nb-card-header>
       <nb-card-body>
         <form>
@@ -68,28 +68,39 @@
           </div>
         </form>
       </nb-card-body>
-    </nb-card>
+    </nb-card> -->
 
     <nb-card>
-      <nb-card-header>Form without labels</nb-card-header>
+      <nb-card-header>How did we do?</nb-card-header>
       <nb-card-body>
-        <form>
+        <toaster-container [toasterconfig]="config"></toaster-container>
+        <form (ngSubmit)="onSubmit()" [formGroup]="myform">
           <div class="form-group">
-            <input type="text" class="form-control" placeholder="Recipients">
+            <input type="text" class="form-control" placeholder="Username" formControlName="username">
           </div>
-          <div class="form-group">
+          <div class="form-control-feedback" *ngIf="username.errors && (username.dirty || username.touched)">
+            <p *ngIf="username.errors.required">Username is required</p>
+          </div>
+
+          <!-- <div class="form-group">
             <input type="text" class="form-control" placeholder="Subject">
-          </div>
+          </div> -->
           <div class="form-group">
-            <textarea class="form-control" placeholder="Message"></textarea>
+            <textarea class="form-control" placeholder="Message" formControlName="message" required></textarea>
+          </div>
+          <div class="form-control-feedback" *ngIf="message.errors && (message.dirty || message.touched)">
+              <p *ngIf="message.errors.required">Message is required</p>
           </div>
           <button type="submit" class="btn btn-success">Send</button>
+          <div>
+              <p *ngIf="form_post_error">Succesful request!</p>
+          </div>
         </form>
       </nb-card-body>
     </nb-card>
   </div>
 
-  <div class="col-md-6">
+  <!-- <div class="col-md-6">
     <nb-card>
       <nb-card-header>Basic form</nb-card-header>
       <nb-card-body>
@@ -145,9 +156,9 @@
       </nb-card-body>
     </nb-card>
   </div>
-</div>
+</div> -->
 
-<div class="row">
+  <!-- <div class="row">
   <div class="col-md-6">
     <nb-card>
       <nb-card-header>Horizontal form</nb-card-header>
@@ -180,5 +191,5 @@
         </form>
       </nb-card-body>
     </nb-card>
-  </div>
+  </div> -->
 </div>

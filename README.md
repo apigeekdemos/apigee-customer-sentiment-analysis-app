@@ -3,6 +3,8 @@ Apigee Sentiment Analysis App
 
 Apigee sentiment Analysis App (ASAP) uses REST APIs built on top of Apigee. The purpose of this app is to show how to leverage a REST API into an App to build the user experience from two different roles: end-user/customer and customer service administrator.
 
+!(Main page)[../images/app-image.png]
+
 ### Getting started
 Start by cloning this repo:
 ```bash
@@ -22,6 +24,9 @@ Describe the app:
 * @TODO see [src/app/@core/data/smart-table.service.ts](src/app/@core/data/smart-table.service.ts)
 * @ Review getData method
 * @TODO Review [/src/app/pages/tables/smart-table/smart-table.component.ts](/src/app/pages/tables/smart-table/smart-table.component.ts) check constructor.
+* @TODO Generate dist `$ ng build`
+* @TODO `cp -rf ./dist/** ../ngx-admin-nodejs/public`
+* @TODO Push to gcloud with `gcloud app deploy --quiet` and Node.js server
 
 ### References and Documentation
 

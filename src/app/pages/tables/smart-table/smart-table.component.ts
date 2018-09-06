@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { LocalDataSource } from 'ng2-smart-table';
 
 import { SmartTableService } from '../../../@core/data/smart-table.service';
+import {DatePipe} from '@angular/common';
 
 @Component({
   selector: 'ngx-smart-table',
@@ -11,6 +12,7 @@ import { SmartTableService } from '../../../@core/data/smart-table.service';
       transform: translate3d(0, 0, 0);
     }
   `],
+  providers:[DatePipe]
 })
 export class SmartTableComponent {
 
@@ -71,18 +73,39 @@ export class SmartTableComponent {
       image: {
         title: 'Image URL',
         type: 'html',
-        valuePrepareFunction: (image:string) => { return `<img width="50px" src="${image}" />`; },
-      }
+        valuePrepareFunction: (image:string) => { return `<div align="center"><img width="50px" src="${image}" /></div>`; },
+      },
+      date: {
+        sort: true,
+        sortDirection: 'desc',
+        title: 'Date',
+        type: 'date',
+        valuePrepareFunction: (date) => {
+          var formatted, raw;
+          try {
+            raw = new Date(date);
+          } catch(e) {
+            console.log('date:', date);
+            raw = new Date();
+          } finally{
+            formatted = this.datePipe.transform(raw, 'dd MMM yyyy');
+            return formatted;  
+          }
+        }
+      },
     },
   };
 
   source: LocalDataSource = new LocalDataSource();
 
-  constructor(private service: SmartTableService) {
+  constructor(private service: SmartTableService, private datePipe: DatePipe) {
+    /* const data = this.service.getData();
+    console.log(data); */
+
     const data = this.service.getData().subscribe((data) => {
       //this.contacts  =  data;
-      console.log(data);
-      this.source.load(data['results']);
+      //console.log(data);
+      this.source.load(data);
     });
   }
 
