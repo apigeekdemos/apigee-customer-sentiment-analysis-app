@@ -12,6 +12,9 @@ import {CommentsService } from '../../../@core/data/comments-service';
 import {HttpResponse} from '@angular/common/http';
 import { ToasterService, ToasterConfig, Toast, BodyOutputType } from 'angular2-toaster';
 import 'style-loader!angular2-toaster/toaster.css';
+import { ActivatedRoute } from '@angular/router';
+import { Subscription } from 'rxjs';
+import { MessageService } from '../../../@core/utils/message.service';
 
 @Component({
   selector: 'ngx-form-layouts',
@@ -21,7 +24,6 @@ import 'style-loader!angular2-toaster/toaster.css';
 })
 export class FormLayoutsComponent {
 
-  constructor(private commentsService: CommentsService, private toasterService: ToasterService) { }
   myform: FormGroup;
   username: FormControl;
   message: FormControl;
@@ -41,6 +43,33 @@ export class FormLayoutsComponent {
   animationType = 'fade';
   toastsLimit = 5;
   timeout = 5000;
+  username_param;
+  subscription: Subscription;
+
+  constructor(private commentsService: CommentsService, 
+    private toasterService: ToasterService,
+    private route: ActivatedRoute) {
+      
+/*       this.route.queryParams.subscribe(params => {
+        this.username_param = params['username'];
+    });
+ */ 
+    console.log("sessionStorage.getItem('username')", sessionStorage.getItem('username'));
+    this.username_param = sessionStorage.getItem('username');
+    console.log(this.username_param);
+  }
+
+  /* private subscription: Subscription
+  paramName: string;
+  paramLastName: string
+
+  this.subscription = this.activatedRoute.queryParams.subscribe(
+    params => {
+      this.paramName     = params['name'];
+      this.paramLastName = params['lastname'];
+    }
+  )
+ */
 
   ngOnInit() {
     this.createFormControls();

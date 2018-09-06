@@ -20,7 +20,7 @@ export class SmartTableService {
   //   }
 
   getData() {
-    return this.httpClient.get(`${this.API_URL}/comments?pagesize=1000`)
+    return this.httpClient.get(`${this.API_URL}/comments?pagesize=100`, {headers: { apikey: 'XlGDdGSk2G9G1A5Y2tP3VayXAsXPpsAV'}})
       .pipe(map(data => Object.keys(data['comments']).map(k => {
         var name = 'invalid', comment = 'invalid', 
           sentiment_image_url = 'https://storage.googleapis.com/apigee-apijam-images/eye-off.svg', score = 0, 

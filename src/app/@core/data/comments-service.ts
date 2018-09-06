@@ -9,7 +9,9 @@ import { Observable, throwError } from 'rxjs';
 export class CommentsService {
   //API_URL  =  'http://apigee-cs-test.apigee.net/sentiment-analysis-api';
   //API_URL = 'http://demo39-test.apigee.net/v1/customersentiments';
-  API_URL = 'http://amer-api-partner19-test.apigee.net/proxy-for';
+  //API_URL = 'http://amer-api-partner19-test.apigee.net/proxy-for';
+  API_URL = 'http://demo39-test.apigee.net/v1/customersentiments';
+
 
   constructor(private httpClient: HttpClient) { }
 
@@ -18,7 +20,7 @@ export class CommentsService {
     console.log('comment', comment);
     return this.httpClient
       //.post
-      .post(this.API_URL + '/comments', comment, { headers: { 'Content-Type': "application/json" } })
+      .post(this.API_URL + '/comments', comment, { headers: { 'Content-Type': "application/json", apikey: 'XlGDdGSk2G9G1A5Y2tP3VayXAsXPpsAV' } })
       .pipe(catchError(this.handleError))
   }
 

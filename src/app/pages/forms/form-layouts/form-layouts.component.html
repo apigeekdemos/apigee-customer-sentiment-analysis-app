@@ -76,7 +76,7 @@
         <toaster-container [toasterconfig]="config"></toaster-container>
         <form (ngSubmit)="onSubmit()" [formGroup]="myform">
           <div class="form-group">
-            <input type="text" class="form-control" placeholder="Username" formControlName="username">
+            <input type="text" class="form-control" placeholder="Username" formControlName="username" [value]="username_param">
           </div>
           <div class="form-control-feedback" *ngIf="username.errors && (username.dirty || username.touched)">
             <p *ngIf="username.errors.required">Username is required</p>
