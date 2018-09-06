@@ -3,7 +3,7 @@ Apigee Sentiment Analysis App
 
 Apigee sentiment Analysis App (ASAP) uses REST APIs built on top of Apigee. The purpose of this app is to show how to leverage a REST API into an App to build the user experience from two different roles: end-user/customer and customer service administrator.
 
-!(Main page)[../images/app-image.png]
+![Main page](./images/app-image.png)
 
 ### Getting started
 Start by cloning this repo:
