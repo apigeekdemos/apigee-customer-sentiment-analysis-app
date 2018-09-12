@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxyEndpoint name="default">
+    <Description/>
+    <FaultRules/>
+    <PreFlow name="PreFlow">
+        <Request>
+            <Step>
+                <Condition>request.verb != "OPTIONS"</Condition>
+                <Name>VerifyAPIKey</Name>
+            </Step>
+            <Step>
+                <Condition>request.verb != "OPTIONS"</Condition>
+                <Name>AM-removeAPIKey</Name>
+            </Step>
+            <Step>
+                <Condition>request.verb != "OPTIONS"</Condition>
+                <Name>FC-getGoogleAccessToken</Name>
+            </Step>
+        </Request>
+        <Response/>
+    </PreFlow>
+    <PostFlow name="PostFlow">
+        <Request/>
+        <Response>
+            <Step>
+                <Condition>request.verb != "OPTIONS"</Condition>
+                <Name>AM-setCorsHeaders</Name>
+            </Step>
+        </Response>
+    </PostFlow>
+    <Flows>
+        <Flow name="post /comments">
+            <Description>Create a new Comment</Description>
+            <Request>
+                <Step>
+                    <Name>EV-Content</Name>
+                </Step>
+                <Step>
+                    <Condition>comment = null</Condition>
+                    <Name>RF-BadRequest</Name>
+                </Step>
+                <Step>
+                    <Name>AM-setDocument</Name>
+                </Step>
+            </Request>
+            <Response>
+                <Step>
+                    <Name>JS-setSavePayload</Name>
+                </Step>
+                <Step>
+                    <Name>SC-saveCommentToFirebase</Name>
+                </Step>
+                <Step>
+                    <Name>AM-setPostCommentResponse</Name>
+                </Step>
+            </Response>
+            <Condition>(proxy.pathsuffix MatchesPath "/comments") and (request.verb = "POST")</Condition>
+        </Flow>
+        <Flow name="get /comments">
+            <Description>Returns a list of Comments</Description>
+            <Request>
+                <Step>
+                    <Name>EV-getPageInfo</Name>
+                </Step>
+            </Request>
+            <Response>
+                <Step>
+                    <Condition>startat != null</Condition>
+                    <Name>LookupCache-PageInfo</Name>
+                </Step>
+                <Step>
+                    <Name>JS-addPagination</Name>
+                </Step>
+                <Step>
+                    <Condition>pagination.startat != null</Condition>
+                    <Name>PopulateCache-PageInfo</Name>
+                </Step>
+            </Response>
+            <Condition>(proxy.pathsuffix MatchesPath "/comments") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="getAccessToken">
+            <Description>generates an access token using Google Identity Provider</Description>
+            <Request>
+                <Step>
+                    <Name>FC-getGoogleAccessToken</Name>
+                </Step>
+            </Request>
+            <Response>
+                <Step>
+                    <Name>AM-setTokenResponse</Name>
+                </Step>
+            </Response>
+            <Condition>(proxy.pathsuffix MatchesPath "/accesstoken") and (request.verb = "POST")</Condition>
+        </Flow>
+        <Flow name="get a users comments">
+            <Description>returns a list of comments by username</Description>
+            <Request>
+                <Step>
+                    <Name>EV-getPageInfo</Name>
+                </Step>
+            </Request>
+            <Response>
+                <Step>
+                    <Name>JS-addPagination</Name>
+                </Step>
+            </Response>
+            <Condition>(proxy.pathsuffix MatchesPath "/{username}/comments") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="CORS">
+            <Description>return cors headers</Description>
+            <Request>
+                <Step>
+                    <Name>AM-setCorsHeaders</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>request.verb == "OPTIONS" AND request.header.origin != null AND request.header.Access-Control-Request-Method != null</Condition>
+        </Flow>
+        <Flow name="delete comment by id">
+            <Description/>
+            <Request>
+                <Step>
+                    <Name>EV-getCommentId</Name>
+                </Step>
+            </Request>
+            <Response>
+                <Step>
+                    <Name>AM-setDeleteSuccessResponse</Name>
+                </Step>
+            </Response>
+            <Condition>(proxy.pathsuffix MatchesPath "/comments/{id}") and (request.verb = "DELETE")</Condition>
+        </Flow>
+        <Flow name="Unsupported">
+            <Description>not supported</Description>
+            <Request>
+                <Step>
+                    <Name>RF-Unsupported</Name>
+                </Step>
+            </Request>
+            <Response/>
+        </Flow>
+    </Flows>
+    <HTTPProxyConnection>
+        <BasePath>/v1/customersentiments</BasePath>
+        <Properties/>
+        <VirtualHost>default</VirtualHost>
+        <VirtualHost>secure</VirtualHost>
+    </HTTPProxyConnection>
+    <RouteRule name="AccessToken">
+        <Condition>(proxy.pathsuffix MatchesPath "/accesstoken")</Condition>
+    </RouteRule>
+    <RouteRule name="NoRoute">
+        <Condition>request.verb == "OPTIONS" AND request.header.origin != null AND request.header.Access-Control-Request-Method != null</Condition>
+    </RouteRule>
+    <RouteRule name="Comments">
+        <Condition>(request.verb == "DELETE") or ((request.verb == "GET") AND 
+        ((proxy.pathsuffix MatchesPath "/*/comments") or (proxy.pathsuffix MatchesPath "/comments")))</Condition>
+        <TargetEndpoint>Firebase</TargetEndpoint>
+    </RouteRule>
+    <RouteRule name="default">
+        <TargetEndpoint>default</TargetEndpoint>
+    </RouteRule>
+</ProxyEndpoint>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Manifest name="manifest">
+    <Policies>
+        <VersionInfo resourceName="AM-removeAPIKey" version="SHA-512:d57dddafe27f3d4596bf34e99d0271a69bbc4ba9cbaa0c1001b43cf16e3526dc07683fcae4ada9337cb4456eda2edf2abf757546792dab9ca31f911d249d2d48"/>
+        <VersionInfo resourceName="AM-setCommentsRequest" version="SHA-512:0fbc50df82a0a984e3547a41f95c56f34fa6327beb31b53eb2e65f33eff3c06b7935456139da506675832ee03a03d68b83c1de1521f7d68ccc1ec997f0cb1c28"/>
+        <VersionInfo resourceName="AM-setCorsHeaders" version="SHA-512:6cd0e9c55a8b5da69b1fda561f4884f8b68aa747920c78c603765a5a8f1b3b9b226b94b1e32b92811a664d9eeb261ace3d3691cf776e32912d526868c183cb2f"/>
+        <VersionInfo resourceName="AM-setDeleteSuccessResponse" version="SHA-512:dc9410a0244214abdd079e155514a7430a56194a3f2260a3443bd9cd32da763a42e2eab2a72c798486bf481deb334d71ef45a1150877d457dc1b447325a02d3a"/>
+        <VersionInfo resourceName="AM-setDocument" version="SHA-512:abfedd847b328aee9d689c9061d380e2035c17369ee9dfc7473100abacfc225b45f6810ab88c085d08c5a34579f2eff2d7ae1532918c8866c8f06f713c5d8e13"/>
+        <VersionInfo resourceName="AM-setNlpApiKey" version="SHA-512:add6739706c8a71d13be3a5695151e8328bce5b68089a5cfce94182fb21a4b5eea7f09b51143b35fca448d51ed390a612810985435626563cf98c0a3d77a7259"/>
+        <VersionInfo resourceName="AM-setPostCommentResponse" version="SHA-512:7513996fb2d9e03a91dfa6fc54026c620a7b2737be103d283d1c00059824eae2b83e1f5bd446dccd16024b7d6a20ef06f1cf7d8b59b496cabd39978b43b1d54a"/>
+        <VersionInfo resourceName="AM-setTokenResponse" version="SHA-512:d83e90acbdc4494220d450cbbd260ae98e203b0ac0ecaf3b79c77ca7dcddb828fcac17396b463c046dcea423b6abe61d13585d4030301a6c858908b06e61a0e3"/>
+        <VersionInfo resourceName="AM-setUserTarget" version="SHA-512:b60d41d4d623c015bdcd7e1281da69c0b8ea341592bdb04829cf9b03b7d2354cfc4c4066b3011886c6e1f2662fd585aa667bcd4a579a4dd53d026a570ee92760"/>
+        <VersionInfo resourceName="EV-Content" version="SHA-512:4b81f334aec93682ac2871fc10636b420860dc14ebc7f7666c6205c3206f07829240e426b7a127e64c550e92f914eea4bd7bbb4553d870268cdfcb1cf834edd2"/>
+        <VersionInfo resourceName="EV-getCommentId" version="SHA-512:7f1650ccd26afdf9c6d7d3c21962f9e1bb5786becb2112e00dafa5ecfdead1ec3374f40af3782b44dd033ef4d4d013b671dea01675f09fdabe0590aed90e1468"/>
+        <VersionInfo resourceName="EV-getPageInfo" version="SHA-512:388656bbc0e3b75a47dcbc2762de9add3dd0caa06d4b9956932bc56b73e90f7ed987d4aff185859c18f3323b3a33db7f3aa3232210bf0a263e7cf9569cce37b4"/>
+        <VersionInfo resourceName="EV-getUserInfo" version="SHA-512:a971107bbb5b89bf472f83aa256f531888b628047324ad002c7b229d1fa978d7017b3a426ec8b3efc70d4767b1316141b9f1f1761ae6502c2b2664a230b9b623"/>
+        <VersionInfo resourceName="EV-getUsername" version="SHA-512:a038035fe074c2e6644a337bd65d0799cb1f7b4b7288027f7b493a0708042e0a82720f5540aa18e19d2c8d3085a4f3998f665fcdb418822cf0d95d3dd6e511b3"/>
+        <VersionInfo resourceName="FC-getGoogleAccessToken" version="SHA-512:bb68d662ea8e5f5bc3580666b8315a2ffcbbaba769729625d44c997bef36b9976789b11f274f4956fbe7cd8e5f4e9412d78c1c0a6cb805f3ba711d150ca8fc02"/>
+        <VersionInfo resourceName="JS-addPagination" version="SHA-512:c302565a792722396eadc204ba5fd81b7a2e2ada1c9210167806a3a1b69bafeb67a96e10e32f1cc65753bba12836b1df7c5a378724e833d073e4e8fb1c69d04e"/>
+        <VersionInfo resourceName="JS-rewriteTargetUrl" version="SHA-512:1f91b3a23c66eb5e4de07cc788915a24aa194f6a23389bf6dfde58a36d3318865bf8e25d135baaa899d4fd5bc09c8d21d6f5e7ebf6083561ee626799014e04e8"/>
+        <VersionInfo resourceName="JS-rewriteTargetUrlDelete" version="SHA-512:c91f3bdd3c611e49cf356e4e61726a243e8cf280a8ea8b0d60c99162e3bd924b96c29ed58107ed21c2cb0dda13621fc60cb1cec4451dd050a48a716685f8a50a"/>
+        <VersionInfo resourceName="JS-rewriteTargetUrlUsers" version="SHA-512:fbb8d7a7288eca7301b607e4dd949aa40360440d917219181e39017176f4384866c512b4cb13028ab55ae25090bd520bf060c6abe9bd34cfef7602bd5bfe785e"/>
+        <VersionInfo resourceName="JS-setSavePayload" version="SHA-512:d3e6361c813fc14bae3bc8a6bf66f87493b7192f039ec3daeffefeb1b4f82e872857052fdc36685791fa1cdb5f7a055d046b92ba38b20e7f83f11d8b0e5726d1"/>
+        <VersionInfo resourceName="LookupCache-PageInfo" version="SHA-512:330bb42adf1fb1fdc82d89893345ee27dddb93a5385c903a7cb04ebac750ab43a82d9bb3b03516cfb2a3defb7c91b5d5a692c514f70c544750695deaeabf6252"/>
+        <VersionInfo resourceName="PopulateCache-PageInfo" version="SHA-512:fa2c63a4765504b59457e446a503e2fe7b575ee00e26325d47ebe18beeeb3eb5ef000f46644be5fe0ae4491cbe1065a1f1aad2ab2dd94262e4f3d645bf8323de"/>
+        <VersionInfo resourceName="RF-BadRequest" version="SHA-512:b55bc25c9f07072a1aaed0410df46e0eb2b53a9b64c4511b8b79a1053efa9f844db5a03eaa7a29bbb533e5fa9383527c3303644c52470a51c841ed39967b8204"/>
+        <VersionInfo resourceName="RF-BadRequestUserinfo" version="SHA-512:7ab586402e310e81f7e186da211ab95c799bc9d70d8deb6609fb30bbe8a5049f19df3c21275bf42330d76feb344774fc49b04330c7d83a981405daf2c087e6a5"/>
+        <VersionInfo resourceName="RF-Unsupported" version="SHA-512:4b761577086b61b3a8a46257ad53053b793e538d77111a97585e14ab0a872279187c406e6b95059ad92070a8315ec1cf5527428d40a5ed6195ab113e9b20065c"/>
+        <VersionInfo resourceName="SC-saveCommentToFirebase" version="SHA-512:5424c197dac2bf9f21b2e9e0cd323e682d643c4f74ad073a379d462648832611c35160aa20b7043b063fb7c76d4bf2f8ae007671e2110ab8fa3eb6fe273553ed"/>
+        <VersionInfo resourceName="SC-saveUser" version="SHA-512:464a414504d6c8d705925ddefd10a2407e2508d00dccc89f0dc972c11b98c6b5387c72f2cda3f863dfcc5bbfb26cdde25557da750ab641e047614c4fafd41bc1"/>
+        <VersionInfo resourceName="VerifyAPIKey" version="SHA-512:902d53ff3ae4f7cd9083142a85407fe0ec59f38407867ea340d7bafce99cdfa9eb3f1272a4eea75779459c5ebb67a7b876fcec07a8ccb53c2326c7ac7162070f"/>
+    </Policies>
+    <ProxyEndpoints>
+        <VersionInfo resourceName="default" version="SHA-512:357cd30bb8aae94c22098876f65102324550e240c0f0b2458dfb72a560d0b33c0734c046266da0ba4a54391b97326ca89fbea44199aad555c9b2ee4fdb194aad"/>
+    </ProxyEndpoints>
+    <Resources>
+        <VersionInfo resourceName="jsc://addPagination.js" version="SHA-512:4ebb54c690a7b4863f5e8f69c8e2fdc9a8b9d11e4c6cf2d1aed496a0a38238f8cc2c78fc90e4f19a09cb316b03313c8113f79250f3dafc57fd08364e1844e59c"/>
+        <VersionInfo resourceName="jsc://rewriteTargetUrl.js" version="SHA-512:6d60363ec38ddf8ef99c3fbb87c9ce721964cf00739b4394b7b7d1234d0b3948dec27f2dd26931423b7750e3e9cd4740c9cc14d401416dca739f0d1159145f16"/>
+        <VersionInfo resourceName="jsc://rewriteTargetUrlDelete.js" version="SHA-512:bedeb8bb45b8ba09ad0d2507242494d14102a0d77ed1493901a8448456a9ef3f92f040b1a7916dc07c78ec3077def458ff41c54729cfe4c65748cf85c63904d7"/>
+        <VersionInfo resourceName="jsc://rewriteTargetUrlUsers.js" version="SHA-512:a368334fcc923d619a0b614284ab350b3fe22ad48ae232ad10534d84dac51ea85e30fb6c2ffb0f09559855d90d99c832a1443d1fc7b873605da78743bfa7df9f"/>
+        <VersionInfo resourceName="jsc://setSavePayload.js" version="SHA-512:43d48ec4ba3707f33c7beeea2fa061506e2b80c2690838e6f92597b02e4596ab46a4804316a3eca3c57db6ce5d8650f93625e2eebed0eb12975db0e6071c7e54"/>
+        <VersionInfo resourceName="openapi://association.json" version="SHA-512:dac8a97f23bdbfa5bb09c79fe298651029cf79f65dc904601d8fff16c8b0ba188303a2c3a510a84c01f896be9cd3f4875c67afa573bbb9d08d55d17080fdf0d1"/>
+    </Resources>
+    <SharedFlows/>
+    <TargetEndpoints>
+        <VersionInfo resourceName="Firebase" version="SHA-512:0fed18a78cdb6238e2b30ea021803eac7cd3eab6eac6be2b1d8da60f3e28a503c242ec6399a5e8437d4cc041d450a2bafab74493bd0d436ca2088497df164b6b"/>
+        <VersionInfo resourceName="default" version="SHA-512:2ffd5376125195ccc9055e22e301ec88bee8f214f281b6a7e2ad7387c8c4c13c9233f067d145dfee086ba40bf626223d4180291de06a899fed40326baf32412b"/>
+    </TargetEndpoints>
+</Manifest>

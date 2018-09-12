@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="false" enabled="true" name="AM-setDocument">
+    <DisplayName>AM-setDocument</DisplayName>
+    <Properties/>
+    <Set>
+        <Payload contentType="application/json">{
+            "document":{
+                "type":"PLAIN_TEXT",
+                "content":"{comment}"
+            },
+            "encodingType":"UTF8"
+        }
+        </Payload>
+    </Set>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <AssignTo createNew="false" transport="http" type="request"/>
+</AssignMessage>

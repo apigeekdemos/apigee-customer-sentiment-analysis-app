@@ -1,0 +1,19 @@
+{
+  "name": "apigee-partner-demo-setup",
+  "version": "1.0.0",
+  "description": "Deploy the config to Apigee Edge.",
+  "main": "setup.js",
+  "scripts": {
+    "start": "npm install && node setup.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "maven": "latest",
+    "replace-in-file": "latest",
+    "prompt": "latest",
+    "colors": "latest",
+    "randomstring": "latest",
+    "request": "latest"
+  }
+}

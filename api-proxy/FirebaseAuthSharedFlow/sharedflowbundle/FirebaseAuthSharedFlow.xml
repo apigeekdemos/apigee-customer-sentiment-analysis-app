@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<SharedFlowBundle revision="3" name="FirebaseAuthSharedFlow">
+    <ConfigurationVersion majorVersion="4" minorVersion="0"/>
+    <CreatedAt>1535045434341</CreatedAt>
+    <CreatedBy>hanselm@google.com</CreatedBy>
+    <Description>get an oauth access token from googleapis using a service account</Description>
+    <DisplayName>partner-demo-google-oauth-sf</DisplayName>
+    <LastModifiedAt>1536359447682</LastModifiedAt>
+    <LastModifiedBy>hanselm@google.com</LastModifiedBy>
+    <ManifestVersion>SHA-512:f42828f6e00e027a1baba15c1ad8b7cc9da4a9c7ade4ada0c54e251063a17b5f9c743faa7f66449e9930da1000fb4860eea9e578c8d5700cfe7dbffa11c9a224</ManifestVersion>
+    <Policies>
+        <Policy>Cache-lookupAccessToken</Policy>
+        <Policy>Cache-populateAccessToken</Policy>
+        <Policy>Decode-JWT-1</Policy>
+        <Policy>EV-getAccessToken</Policy>
+        <Policy>EV-getServiceAccountCredentials</Policy>
+        <Policy>JS-parseServiceAccountJson</Policy>
+        <Policy>JWT-generate</Policy>
+        <Policy>KVM-getServiceAccountCredentials</Policy>
+        <Policy>SC-getGoogleAccessToken</Policy>
+    </Policies>
+    <Resources>
+        <Resource>jsc://parseServiceAccountJson.js</Resource>
+    </Resources>
+    <Spec></Spec>
+    <subType>SharedFlow</subType>
+    <SharedFlows>
+        <SharedFlow>default</SharedFlow>
+    </SharedFlows>
+</SharedFlowBundle>

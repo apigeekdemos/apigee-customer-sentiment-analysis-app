@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PopulateCache async="false" continueOnError="false" enabled="true" name="PopulateCache-PageInfo">
+    <DisplayName>PopulateCache-PageInfo</DisplayName>
+    <Properties/>
+    <CacheKey>
+        <Prefix/>
+        <KeyFragment ref="pagination.startat"/>
+    </CacheKey>
+    <CacheResource>PartnerAPIJam_Pagination</CacheResource>
+    <Scope>Exclusive</Scope>
+    <ExpirySettings>
+        <TimeoutInSec>86400</TimeoutInSec>
+    </ExpirySettings>
+    <Source>pagination.prev</Source>
+</PopulateCache>

@@ -1,0 +1,67 @@
+{
+    "version": "1.0",
+    "envConfig": {
+        "test": {
+          "targetServers": [
+          ],
+          "caches": [
+            {
+              "name" : "FirebaseTokenCache",
+              "description" : "stores google acces token",
+              "expirySettings": {
+                    "timeoutInSec": {
+                        "value": "3599"
+                    },
+                    "valuesNull": false
+                }
+            }
+          ],
+          "kvms": [
+            {
+              "name" : "FirebaseKVM2",
+              "encrypted" : "true",
+              "entry" : [
+                {
+                  "name" : "service_account_json", "value" : ""
+                }
+              ]
+            }
+          ]
+        },
+        "prod": {
+          "targetServers": [
+          ],
+          "caches": [
+            {
+              "name" : "FirebaseTokenCache",
+              "description" : "stores google acces token",
+              "expirySettings": {
+                    "timeoutInSec": {
+                        "value": "3599"
+                    },
+                    "valuesNull": false
+                }
+            }
+          ],
+          "kvms": [
+            {
+              "name" : "FirebaseKVM2",
+              "encrypted" : "true",
+              "entry" : [
+                {
+                  "name": "service_account_json", "value" : ""
+                }
+              ]
+            }
+          ]
+        }
+    },
+    "orgConfig": {
+        "apiProducts": [
+        ],
+        "developers": [
+        ],
+        "developerApps": {
+        }
+    }
+}

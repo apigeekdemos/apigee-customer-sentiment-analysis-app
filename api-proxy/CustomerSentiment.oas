@@ -1,0 +1,206 @@
+# Be aware that YAML has indentation based coping.
+swagger: '2.0'
+
+# This is your document metadata
+info:
+  version: "0.0.1"
+  title: Customer Sentiments
+  description: |
+    An API that uses natural language processing to analyze customer comments for sentiment analysis.
+
+host:
+  language.googleapis.com
+
+schemes:
+  - https
+
+# Describe your paths here
+paths:
+  # This is a path endpoint. Change it.
+  /comments:
+    post:
+      summary: Create a new Comment
+      description: This endpoint will create a new comment and perform sentiment analysis.
+      parameters:
+        - name: body
+          required: true
+          description: a comment oject
+          in: body
+          schema:
+            $ref: '#/definitions/Comment'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/CommentResponse'
+        '400':
+          description: Bad Request
+    # This is a HTTP operation
+    get:
+      summary: Returns a list of Comments
+      # Describe this verb here. Note: you can use markdown
+      description: |
+        Gets `Comment` objects.
+      # This is array of GET operation parameters:
+      parameters:
+        # An example parameter that is in query and is optional
+        - name: pagesize
+          in: query
+          description: number of records per page
+          required: false
+          type: number
+          format: integer
+        - name: startat
+          in: query
+          description: returns comments starting at this timestamp. used for pagination
+          required: false
+          type: number
+          format: integer
+      # Expected responses for this operation:
+      responses:
+        # Response code
+        200:
+          description: Successful response
+          # A schema describing your response object.
+          # Use JSON Schema format
+          schema:
+            $ref: '#/definitions/CommentsResponse'
+  /{username}/comments:
+    get:
+      summary: Returns comments for a giver username
+      # Describe this verb here. Note: you can use markdown
+      description: |
+        Gets `Comment` objects for a given user.
+      parameters:
+        # An example parameter that is in query and is required
+        - name: username
+          in: path
+          description: username
+          required: true
+          type: string
+      # Expected responses for this operation:
+      responses:
+        # Response code
+        200:
+          description: Successful response
+          # A schema describing your response object.
+          # Use JSON Schema format
+          schema:
+            $ref: '#/definitions/CommentsResponse'
+  /comments/{id}:
+    delete:
+      summary: Deletes a comment by id
+      # Describe this verb here. Note: you can use markdown
+      description: |
+        Deletes `Comment` object.
+      parameters:
+        # An example parameter that is in query and is required
+        - name: id
+          in: path
+          description: comment id
+          required: true
+          type: string
+      # Expected responses for this operation:
+      responses:
+        # Response code
+        200:
+          description: Successful response
+          # A schema describing your response object.
+          # Use JSON Schema format
+          schema:
+            $ref: '#/definitions/DeleteResponse'
+definitions:
+  DeleteResponse:
+    type: string
+  Comment:
+    type: object
+    required : [ "comment", "username" ]
+    properties:
+      comment:
+        type: string
+      username:
+        type: string
+  CommentResponse:
+    type: object
+    properties:
+      name:
+        type: string
+  CommentsResponse:
+    type: object
+    properties:
+      pagination:
+        type: object
+        required: [ "pagesize" ]
+        properties:
+          pagesize:
+            type: integer
+          next:
+            type: string
+          prev:
+            type: string
+      comments:
+        type: object
+        additionalProperties:
+          $ref: '#/definitions/SavedComment'
+  SavedComment:
+    type: object
+    properties:
+      message:
+        type: string
+      timestamp:
+        type: integer
+      username:
+        type: string
+      sentiment:
+        $ref: '#/definitions/Sentiment'
+  Sentiment:
+    type: object
+    properties:
+      entities:
+        type: array
+        items:
+          $ref: '#/definitions/Entity'
+      language:
+        type: string
+  Entity:
+    type: object
+    properties:
+      mentions:
+        type: array
+        items:
+          $ref: '#/definitions/Mention'
+      name:
+        type: string
+      salience:
+        type: number
+        format: double
+      sentiment:
+        $ref: '#/definitions/SentimentValue'
+      type:
+        type: string
+  Mention:
+    type: object
+    properties:
+      sentiment:
+        $ref: '#/definitions/SentimentValue'
+      text:
+        $ref: '#/definitions/TextValue'
+      type:
+        type: string
+  SentimentValue:
+    type: object
+    properties:
+      magnitude:
+        type: number
+        format: double
+      score:
+        type: number
+        format: double
+  TextValue:
+    type: object
+    properties:
+      beginOffset:
+        type: number
+        format: integer
+      content:
+        type: string

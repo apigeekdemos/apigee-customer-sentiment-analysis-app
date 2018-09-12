@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="false" enabled="true" name="AM-setTokenResponse">
+    <DisplayName>AM-setTokenResponse</DisplayName>
+    <Properties/>
+    <Set>
+        <Payload contentType="application/json">{
+            "access_token" : "{google.accesstoken}",
+            "expiryInSecs" : 3599
+        }</Payload>
+    </Set>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <AssignTo createNew="false" transport="http" type="response"/>
+</AssignMessage>

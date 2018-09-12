@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<APIProxy revision="8" name="CustomerSentiments">
+    <Basepaths>/v1/customersentiments</Basepaths>
+    <ConfigurationVersion majorVersion="4" minorVersion="0"/>
+    <CreatedAt>1534910824218</CreatedAt>
+    <CreatedBy>hanselm@google.com</CreatedBy>
+    <Description>An API that uses natural language processing to analyze customer comments for sentiment analysis.
+</Description>
+    <DisplayName>CustomerSentiments</DisplayName>
+    <LastModifiedAt>1536359975298</LastModifiedAt>
+    <LastModifiedBy>hanselm@google.com</LastModifiedBy>
+    <ManifestVersion>SHA-512:d3182c9da946b8d75131d411168b79a864d2e28f63fd46aec483185f9834f4d891412b1ec0d9c87d490f370880b81595ced1c5d310588eef41eb70e82596b927</ManifestVersion>
+    <Policies>
+        <Policy>AM-removeAPIKey</Policy>
+        <Policy>AM-setCommentsRequest</Policy>
+        <Policy>AM-setCorsHeaders</Policy>
+        <Policy>AM-setDeleteSuccessResponse</Policy>
+        <Policy>AM-setDocument</Policy>
+        <Policy>AM-setNlpApiKey</Policy>
+        <Policy>AM-setPostCommentResponse</Policy>
+        <Policy>AM-setTokenResponse</Policy>
+        <Policy>AM-setUserTarget</Policy>
+        <Policy>EV-Content</Policy>
+        <Policy>EV-getCommentId</Policy>
+        <Policy>EV-getPageInfo</Policy>
+        <Policy>EV-getUserInfo</Policy>
+        <Policy>EV-getUsername</Policy>
+        <Policy>FC-getGoogleAccessToken</Policy>
+        <Policy>JS-addPagination</Policy>
+        <Policy>JS-rewriteTargetUrl</Policy>
+        <Policy>JS-rewriteTargetUrlDelete</Policy>
+        <Policy>JS-rewriteTargetUrlUsers</Policy>
+        <Policy>JS-setSavePayload</Policy>
+        <Policy>LookupCache-PageInfo</Policy>
+        <Policy>PopulateCache-PageInfo</Policy>
+        <Policy>RF-BadRequest</Policy>
+        <Policy>RF-BadRequestUserinfo</Policy>
+        <Policy>RF-Unsupported</Policy>
+        <Policy>SC-saveCommentToFirebase</Policy>
+        <Policy>SC-saveUser</Policy>
+        <Policy>VerifyAPIKey</Policy>
+    </Policies>
+    <ProxyEndpoints>
+        <ProxyEndpoint>default</ProxyEndpoint>
+    </ProxyEndpoints>
+    <Resources>
+        <Resource>openapi://association.json</Resource>
+        <Resource>jsc://addPagination.js</Resource>
+        <Resource>jsc://rewriteTargetUrl.js</Resource>
+        <Resource>jsc://rewriteTargetUrlDelete.js</Resource>
+        <Resource>jsc://rewriteTargetUrlUsers.js</Resource>
+        <Resource>jsc://setSavePayload.js</Resource>
+    </Resources>
+    <Spec></Spec>
+    <TargetServers/>
+    <TargetEndpoints>
+        <TargetEndpoint>Firebase</TargetEndpoint>
+        <TargetEndpoint>default</TargetEndpoint>
+    </TargetEndpoints>
+</APIProxy>
