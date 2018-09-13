@@ -17,11 +17,7 @@ Runtime access to the Firebase database is only via the Apigee Edge proxy.
 * GCP account
 * Apigee Edge account
 * Your GCP service_account.json file
-
-#### Set Up Node Directory
-* Unzip demo-setup.zip.
-* Change to demo-setup directory.
-* Run "npm install" to install required node modules.
+* Your GCP API key
 
 #### Create Firebase DB and Import
 * Go to https://firebase.google.com .
@@ -49,6 +45,11 @@ The demo includes the CustomerSentiments API proxy that will run on Apigee Edge.
 * TargetServer - configuration to your Firebase backend database
 * Caches - to cache the Google access token and pagination information
 
+##### Set Up Node Directory
+* git clone git@github.com:apigeekdemos/apigee-customer-sentiment-analysis-app.git
+* Change directory: cd apiproxy folder
+* Run "npm install" to install required node modules.
+
 ##### Update config.js
 * Modify the following fields:
 * config.defaultOrg (Edge org name)
@@ -56,11 +57,11 @@ The demo includes the CustomerSentiments API proxy that will run on Apigee Edge.
 * config.defaultUsername (Edge login email address)
 * config.defaultFirebaseHost (hostname to access API for your firebase DB -- should look like "*****.firebaseio.com")
 You shouldn't need to modify the other configs if you are using Edge cloud.
-Deploy
+
+##### Deploy
 * Run "node ./setup.js".
 * Answer questions. 
 The org, env, username, and firebase hostname should default to the values you changed in config.js. 
-You will have to enter password (Edge password), and 
-the path to your GCP service_account.json file. 
+You will have to enter password (Edge password), your GCP API key, and the path to your GCP service_account.json file. 
 
-When done answering these, the KVM, Caches, TargetServer, CustomerSentiments, and FirebaseAuthSharedFlow will be deployed to your chosen Edge org and environment.
+When done answering these, the KVM, Caches, TargetServer, CustomerSentiments proxy, and FirebaseAuthSharedFlow will be deployed to your chosen Edge org and environment.
