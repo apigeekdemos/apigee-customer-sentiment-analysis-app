@@ -13,7 +13,6 @@
     "replace-in-file": "latest",
     "prompt": "latest",
     "colors": "latest",
-    "randomstring": "latest",
     "request": "latest"
   }
 }

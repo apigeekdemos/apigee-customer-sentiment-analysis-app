@@ -9,6 +9,9 @@
     <PostFlow name="PostFlow">
         <Request>
             <Step>
+                <Name>KVM-getNlpApiKey</Name>
+            </Step>
+            <Step>
                 <Name>AM-setNlpApiKey</Name>
             </Step>
         </Request>

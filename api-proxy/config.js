@@ -10,6 +10,7 @@ config.proxyDir = "./CustomerSentimentsProxy";
 config.sharedFlowDir = "./FirebaseAuthSharedFlow";
 config.proxyBasepath = "/v1/customersentiments";
 config.kvmName = "FirebaseKVM2";
+config.nlpkvmName = "NLPKVM";
 config.svcacct = "svcacct";
 config.oauthUrl = "https://login.apigee.com/oauth/token";
 config.apigeeMgmtUrl = "https://api.enterprise.apigee.com/v1";

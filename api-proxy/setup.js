@@ -1,11 +1,8 @@
 var prompt = require("prompt");
 var colors = require("colors/safe");
 var replace = require("replace-in-file");
-var randomstring = require("randomstring");
 var request = require("request");
 var config = require("./config.js");
-
-var defaultSecret = randomstring.generate({length:config.secretLength, charset:config.secretCharacterSet});
 
 var schema = {
     properties: {
@@ -43,6 +40,12 @@ var schema = {
         type: "string",
         message: colors.red("Firebase Host name cannot be empty!"),
         default: config.defaultFirebaseHost,
+        required: true
+      },
+      nlpApiKey: {
+        description: colors.yellow("Please provide the GCP NLP Api Key"),
+        type: "string",
+        message: colors.red("GCP NLP Api key cannot be empty!"),
         required: true
       },
       serviceAccountFilename: {
@@ -158,6 +161,21 @@ function setKVMSecret(options){
     request(reqOptions, function (error, response, body) {
       if (response.statusCode != 200) {
         console.log("Failed to update KVM using Apigee management API.");
+        console.log(response);
+        process.exit(0);
+      }
+    });
+
+    // update NLP API key
+    kvmBody.name = "nlpApiKey";
+    kvmBody.value = options.nlpApiKey;
+    reqOptions.body = JSON.stringify(kvmBody);
+    reqOptions.uri = config.apigeeMgmtUrl + "/organizations/" + options.org + "/environments/" + options.env +
+           "/keyvaluemaps/" + config.nlpkvmName + "/entries/nlpApiKey";
+    request(reqOptions, function (error, response, body) {
+      if (response.statusCode != 200) {
+        console.log("Failed to update KVM using Apigee management API.");
+        console.log(response);
         process.exit(0);
       }
       console.log("");
@@ -167,3 +185,4 @@ function setKVMSecret(options){
     });
   });
 }
+

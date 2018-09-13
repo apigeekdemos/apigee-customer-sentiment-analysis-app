@@ -26,6 +26,15 @@
             }
           ],
           "kvms": [
+            {
+              "name" : "NLPKVM",
+              "encrypted" : "true",
+              "entry" : [
+                {
+                  "name" : "nlpApiKey", "value" : ""
+                }
+              ]
+            }
           ]
         },
         "prod": {

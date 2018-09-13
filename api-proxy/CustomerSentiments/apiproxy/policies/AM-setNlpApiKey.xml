@@ -4,7 +4,7 @@
     <Properties/>
     <Set>
         <QueryParams>
-            <QueryParam name="key">AIzaSyCmnGzHUWZMD93jdrX22rGaxFdMbLFqL28</QueryParam>
+            <QueryParam name="key">{private.nlpApiKey}</QueryParam>
         </QueryParams>
     </Set>
     <AssignVariable>
