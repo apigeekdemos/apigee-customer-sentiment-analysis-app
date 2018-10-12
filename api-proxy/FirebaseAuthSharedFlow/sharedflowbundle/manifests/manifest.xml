@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Manifest name="manifest">
+    <Policies>
+        <VersionInfo resourceName="Cache-lookupAccessToken" version="SHA-512:ce81417812d656ad49677e6a1fc4fc246e7ac09fe688da236bf951d74c3ba86ef1cd6ced34d7a2d249f1bb0fed9028af0cccafa69f42bdf1bae6e6b3a9ad1ab1"/>
+        <VersionInfo resourceName="Cache-populateAccessToken" version="SHA-512:f1d006ee8ba0472c3208bfcd6d204679c9624edfa8d3103cd193752826cb5883956fb6b7a0488f54bd5d84f6afad48f9bf75eda8096adadb1ae464724f645fcd"/>
+        <VersionInfo resourceName="Decode-JWT-1" version="SHA-512:26ac133779906b67e2ac62f59acfff13935eeaa7099c634325e7aee2f1c2bad6152c2b54cebbec37bcc2e49f9e2667ad3aade340142a0464f9e5249b303c0d61"/>
+        <VersionInfo resourceName="EV-getAccessToken" version="SHA-512:7ae024345645f2fe4d72b5dd3af10397c7f94f7843bd3feec83807e20d442b54a5d66f4c7656ab1c2eb6a430109e19eacb62cfbeef50f9cf3c8fa8960dc54e74"/>
+        <VersionInfo resourceName="EV-getServiceAccountCredentials" version="SHA-512:9118a01a831b502c04c36823d6902b76633b3ffda4336a0f5f8ef493ce752151543e28e9735a1a67461ab4f6ce422d42be3934136c3f0ae8e60e066041080d23"/>
+        <VersionInfo resourceName="JS-parseServiceAccountJson" version="SHA-512:3852fe069aa54531426d74ce394ec3669077c06389b2b8310b441a4e22a9f1333ee446b74eda3f804fecda6ffaf79f3ff8520f9562d3728437eca8b86d9c095f"/>
+        <VersionInfo resourceName="JWT-generate" version="SHA-512:de04b3cd06edb6fc2f70eeb6600d55e340fdd7807b365ab11ae0fdff9cace4d411ef9ec3334aea36185a25d5e5da5580900a3370113da1af309a2b3d1c26441d"/>
+        <VersionInfo resourceName="KVM-getServiceAccountCredentials" version="SHA-512:c99b7570989f0db4063b203f260b36db8244f0a0ed83d4f2dc10055fec29b2fd80ef3d16b686f6cf87f2899dcc664fdfe6e3511eb694435c52d0450ac64ad083"/>
+        <VersionInfo resourceName="SC-getGoogleAccessToken" version="SHA-512:d18b7168f9811914445fc79c0858a363b4a7573cf27393fcfba7dc27e2819ef793dcec8d595eba0821260d6048845cf31ba05c950c279cc2497c77f2be3e3d59"/>
+    </Policies>
+    <ProxyEndpoints/>
+    <Resources>
+        <VersionInfo resourceName="jsc://parseServiceAccountJson.js" version="SHA-512:715916f24306e6d3a2e8be07ea6e8844ae4476e2fce1c424c49e108eaf2402b040f6b5da74cb55276ed52bdebef9ec9965c50651bd547e8c8136dcb7e7677110"/>
+    </Resources>
+    <SharedFlows>
+        <VersionInfo resourceName="default" version="SHA-512:72681846724060d139f15bfe96a17386a88e8e151a4a25a4461a395179cad1188e16fcc16b5a5551e7ab80300dce2a0ead0f9f83292d61ae25c6cbc7dc3a92d1"/>
+    </SharedFlows>
+    <TargetEndpoints/>
+</Manifest>

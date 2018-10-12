@@ -1,0 +1,16 @@
+{
+    "db":{
+        "comments":{
+            "1": {
+                "message": "this is a test",
+                "username": "someuser",
+                "timestamp": -1
+            }
+        },
+        "users":{
+            "someuser": {
+                "id": 1001
+            }
+        }
+    }
+}

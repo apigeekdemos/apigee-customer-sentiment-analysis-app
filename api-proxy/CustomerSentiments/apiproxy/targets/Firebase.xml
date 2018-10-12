@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<TargetEndpoint name="Firebase">
+    <Description/>
+    <FaultRules/>
+    <PreFlow name="PreFlow">
+        <Request>
+            <Step>
+                <Name>AM-setCommentsRequest</Name>
+            </Step>
+        </Request>
+        <Response/>
+    </PreFlow>
+    <PostFlow name="PostFlow">
+        <Request/>
+        <Response/>
+    </PostFlow>
+    <Flows>
+        <Flow name="get /comments">
+            <Description>Returns a list of Comments</Description>
+            <Request>
+                <Step>
+                    <Name>JS-rewriteTargetUrl</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/comments") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="get a users comments">
+            <Description>returns a list of comments by username</Description>
+            <Request>
+                <Step>
+                    <Name>EV-getUsername</Name>
+                </Step>
+                <Step>
+                    <Name>JS-rewriteTargetUrl</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/{username}/comments") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="delete a comment by id">
+            <Description/>
+            <Request>
+                <Step>
+                    <Name>JS-rewriteTargetUrlDelete</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/comments/{id}") and (request.verb = "DELETE")</Condition>
+        </Flow>
+    </Flows>
+    <HTTPTargetConnection>
+        <Properties/>
+        <LoadBalancer>
+            <Server name="CustomerSentimentsFirebaseTarget"/>
+        </LoadBalancer>
+        <Path>{firebase.path}</Path>
+    </HTTPTargetConnection>
+</TargetEndpoint>

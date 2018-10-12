@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ServiceCallout async="false" continueOnError="false" enabled="true" name="SC-saveCommentToFirebase">
+    <DisplayName>SC-saveCommentToFirebase</DisplayName>
+    <Properties/>
+    <Request clearPayload="true">
+        <IgnoreUnresolvedVariables>false</IgnoreUnresolvedVariables>
+        <Set>
+            <Verb>POST</Verb>
+            <Headers>
+                <Header name="Authorization">Bearer {google.accesstoken}</Header>
+            </Headers>
+            <Payload contentType="application/json">{savePayload}</Payload>
+        </Set>
+    </Request>
+    <Response>savedResponse</Response>
+    <HTTPTargetConnection>
+        <Properties/>
+        <LoadBalancer>
+            <Server name="CustomerSentimentsFirebaseTarget"/>
+        </LoadBalancer>
+        <Path>/db/comments.json</Path>
+    </HTTPTargetConnection>
+</ServiceCallout>

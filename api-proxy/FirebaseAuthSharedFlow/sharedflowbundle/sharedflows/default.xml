@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<SharedFlow name="default">
+    <Step>
+        <Name>Cache-lookupAccessToken</Name>
+    </Step>
+    <Step>
+        <Condition>lookupcache.Cache-lookupAccessToken.cachehit = false</Condition>
+        <Name>KVM-getServiceAccountCredentials</Name>
+    </Step>
+    <Step>
+        <Condition>lookupcache.Cache-lookupAccessToken.cachehit = false</Condition>
+        <Name>JS-parseServiceAccountJson</Name>
+    </Step>
+    <Step>
+        <Condition>lookupcache.Cache-lookupAccessToken.cachehit = false</Condition>
+        <Name>JWT-generate</Name>
+    </Step>
+    <Step>
+        <Condition>lookupcache.Cache-lookupAccessToken.cachehit = false</Condition>
+        <Name>SC-getGoogleAccessToken</Name>
+    </Step>
+    <Step>
+        <Condition>lookupcache.Cache-lookupAccessToken.cachehit = false</Condition>
+        <Name>EV-getAccessToken</Name>
+    </Step>
+    <Step>
+        <Condition>lookupcache.Cache-lookupAccessToken.cachehit = false</Condition>
+        <Name>Cache-populateAccessToken</Name>
+    </Step>
+</SharedFlow>

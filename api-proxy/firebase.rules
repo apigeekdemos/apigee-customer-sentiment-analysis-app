@@ -1,0 +1,16 @@
+{
+  "rules": {
+    ".read": false,
+    ".write": false,
+    "db": {
+      "comments": {
+      	".indexOn": ["username", "timestamp"]
+      },
+      "users": {
+        "$users_id": {
+          ".write": "!data.exists() && newData.exists()"
+        }
+      }
+    }
+  }
+}

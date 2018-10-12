@@ -1,0 +1,76 @@
+{
+    "version": "1.0",
+    "envConfig": {
+        "test": {
+          "targetServers": [
+              {
+                "name" : "CustomerSentimentsFirebaseTarget",
+                "host" : "apigee-partner-demo.firebaseio.com",
+                "isEnabled" : true,
+                "port" : 443,
+                "sSLInfo": {
+                  "enabled": "true"
+                }
+              }
+          ],
+          "caches": [
+            {
+              "name" : "PartnerAPIJam_Pagination",
+              "description" : "pagination cache",
+              "expirySettings": {
+                    "timeoutInSec": {
+                        "value": "86400"
+                    },
+                    "valuesNull": false
+                }
+            }
+          ],
+          "kvms": [
+            {
+              "name" : "NLPKVM",
+              "encrypted" : "true",
+              "entry" : [
+                {
+                  "name" : "nlpApiKey", "value" : ""
+                }
+              ]
+            }
+          ]
+        },
+        "prod": {
+          "targetServers": [
+            {
+              "name" : "CustomerSentimentsFirebaseTarget",
+              "host" : "apigee-partner-demo.firebaseio.com",
+              "isEnabled" : true,
+              "port" : 443,
+              "sSLInfo": {
+                "enabled": "true"
+              }
+            }
+          ],
+          "caches": [
+            {
+              "name" : "PartnerAPIJam_Pagination",
+              "description" : "pagination cache",
+              "expirySettings": {
+                    "timeoutInSec": {
+                        "value": "86400"
+                    },
+                    "valuesNull": false
+                }
+            }
+          ],
+          "kvms": [
+          ]
+        }
+    },
+    "orgConfig": {
+        "apiProducts": [
+        ],
+        "developers": [
+        ],
+        "developerApps": {
+        }
+    }
+}

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<LookupCache async="false" continueOnError="false" enabled="true" name="Cache-lookupAccessToken">
+    <DisplayName>Cache-lookupAccessToken</DisplayName>
+    <Properties/>
+    <CacheResource>FirebaseTokenCache</CacheResource>
+    <CacheKey>
+        <Prefix/>
+        <KeyFragment>token</KeyFragment>
+    </CacheKey>
+    <Scope>Exclusive</Scope>
+    <AssignTo>google.accesstoken</AssignTo>
+</LookupCache>

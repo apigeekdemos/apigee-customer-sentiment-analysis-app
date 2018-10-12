@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PopulateCache async="false" continueOnError="false" enabled="true" name="Cache-populateAccessToken">
+    <DisplayName>Cache-populateAccessToken</DisplayName>
+    <Properties/>
+    <CacheResource>FirebaseTokenCache</CacheResource>
+    <CacheKey>
+        <Prefix/>
+        <KeyFragment>token</KeyFragment>
+    </CacheKey>
+    <Scope>Exclusive</Scope>
+    <ExpirySettings>
+        <TimeoutInSec>3599</TimeoutInSec>
+    </ExpirySettings>
+    <Source>google.accesstoken</Source>
+</PopulateCache>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<LookupCache async="false" continueOnError="false" enabled="true" name="LookupCache-PageInfo">
+    <DisplayName>LookupCache-PageInfo</DisplayName>
+    <Properties/>
+    <CacheKey>
+        <Prefix/>
+        <KeyFragment ref="startat"/>
+    </CacheKey>
+    <CacheResource>PartnerAPIJam_Pagination</CacheResource>
+    <Scope>Exclusive</Scope>
+    <AssignTo>pagination.prev</AssignTo>
+</LookupCache>

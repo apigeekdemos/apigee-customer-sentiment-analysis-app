@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<GenerateJWT async="false" continueOnError="false" enabled="true" name="JWT-generate">
+    <DisplayName>JWT-generate</DisplayName>
+    <Algorithm>RS256</Algorithm>
+    <PrivateKey>
+        <!--Value ref="private.key"/-->
+        <Value ref="private.key"/>
+        <Id ref="private.kid"/>
+    </PrivateKey>
+    <!--Subject>subject-subject</Subject-->
+    <!-- Issuer>firebase-adminsdk-73k8a@apigee-sales-bootcamp-demo.iam.gserviceaccount.com</Issuer -->
+    <Issuer>firebase-adminsdk-wc0y9@apigee-partner-demo.iam.gserviceaccount.com</Issuer>
+    <Audience>https://www.googleapis.com/oauth2/v4/token</Audience>
+    <ExpiresIn>1h</ExpiresIn>
+    <AdditionalClaims>
+        <Claim name="scope" type="string">https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/firebase.database</Claim>
+    </AdditionalClaims>
+    <OutputVariable>jwt-token</OutputVariable>
+</GenerateJWT>
