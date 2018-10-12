@@ -25,7 +25,7 @@ Describe the app:
 * include OpenAPI Spec and endpoints and how they map to the two pages: submit a comment (POST /comments) and retrieve comments (GET /comments).
 * See [src/app/@core/data/smart-table.service.ts] to overide API_URL(src/app/@core/data/smart-table.service.ts)
 * getData function
-* Review [/src/app/pages/tables/smart-table/smart-table.component.ts](/src/app/pages/tables/smart-table/smart-table.component.ts) check constructor.
+* Review [./src/app/pages/tables/smart-table/smart-table.component.ts](./src/app/pages/tables/smart-table/smart-table.component.ts) check constructor.
 * Generate dist `$ ng build`
 * Copy distributable files to public folder:
 ```bash
