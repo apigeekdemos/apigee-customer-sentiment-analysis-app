@@ -33,7 +33,7 @@ $ cp -rf ./dist/** ../ngx-admin-nodejs/public
 ```
 * Push to gcloud with:
 ```bash
-$ cd cd ../nodejs-server-app
+$ cd ../nodejs-server-app
 $ gcloud app deploy --quiet
 ```
 
